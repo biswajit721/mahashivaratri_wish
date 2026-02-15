@@ -20,11 +20,11 @@ export default function MahaShivaratriWebsite() {
           loop
           playsInline
           className="w-full h-full object-cover"
-          src="/video/Aerial view of Lingraj Temple.mp4" // ✅ Make sure this path is correct
+          src={`${import.meta.env.BASE_URL}video/Aerial view of Lingraj Temple.mp4`}
         >
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/50"></div> {/* optional overlay to darken video */}
+        <div className="absolute inset-0 bg-black/50"></div> {/* optional overlay */}
       </div>
 
       {/* ================= HERO SECTION ================= */}

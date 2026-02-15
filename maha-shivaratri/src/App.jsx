@@ -35,25 +35,24 @@ export default function App() {
      AUDIO (Starts After First Click)
   ========================== */
   useEffect(() => {
-  const audio = new Audio("/audio/shiv-web-audio.mp3");
-  audio.loop = true;
-  audio.volume = 0.8;
-  audioRef.current = audio;
+    const audio = new Audio(`${import.meta.env.BASE_URL}audio/shiv-web-audio.mp3`);
+    audio.loop = true;
+    audio.volume = 0.8;
+    audioRef.current = audio;
 
-  const startAudio = () => {
-    audio.play().catch(() => {}); // Start after first click
-    window.removeEventListener("click", startAudio);
-  };
+    const startAudio = () => {
+      audio.play().catch(() => {}); // Start after first click
+      window.removeEventListener("click", startAudio);
+    };
 
-  window.addEventListener("click", startAudio);
+    window.addEventListener("click", startAudio);
 
-  return () => {
-    window.removeEventListener("click", startAudio);
-    audio.pause();
-    audio.currentTime = 0;
-  };
-}, []);
-
+    return () => {
+      window.removeEventListener("click", startAudio);
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   /* =========================
      SAFE THREE.JS BACKGROUND
@@ -153,18 +152,18 @@ export default function App() {
      12 JYOTIRLINGAS DATA
   ========================== */
   const jyotirlingas = [
-    { name: "Somnath", location: "Gujarat", img: "/images/Somanth_Temple.png", details: "First Jyotirlinga of India." },
-    { name: "Mallikarjuna", location: "Andhra Pradesh", img: "/images/Mallikarjuna_Swamy.png", details: "Sacred shrine of Shiva & Parvati." },
-    { name: "Mahakaleshwar", location: "Ujjain", img: "/images/Mahakaleshwar_jyotirlinga.png", details: "South-facing Jyotirlinga." },
-    { name: "Omkareshwar", location: "Madhya Pradesh", img: "/images/Omkareshwar_Temple.png", details: "Located on Om-shaped island." },
-    { name: "Kedarnath", location: "Uttarakhand", img: "/images/Kedarnath_Temple.png", details: "Himalayan holy temple." },
-    { name: "Bhimashankar", location: "Maharashtra", img: "/images/Bhimashankar_Temple.png", details: "Origin of Bhima River." },
-    { name: "Kashi Vishwanath", location: "Varanasi", img: "/images/Kashi_Vishwanath_temple.png", details: "Sacred temple of Varanasi." },
-    { name: "Trimbakeshwar", location: "Maharashtra", img: "/images/Trimbakeshwar_Temple.png", details: "Origin of Godavari River." },
-    { name: "Vaidyanath", location: "Jharkhand", img: "/images/baidyanath_dham.png", details: "Divine healer form." },
-    { name: "Nageshwar", location: "Gujarat", img: "/images/Nageshwar_Jyotirlinga.png", details: "Symbol of protection." },
-    { name: "Ramanathaswamy", location: "Tamil Nadu", img: "/images/Ramanathaswamy_Temple.png", details: "Established by Lord Rama." },
-    { name: "Grishneshwar", location: "Maharashtra", img: "/images/Grishneshwar_Temple.png", details: "Last Jyotirlinga mentioned." },
+    { name: "Somnath", location: "Gujarat", img: `${import.meta.env.BASE_URL}images/Somanth_Temple.png`, details: "First Jyotirlinga of India." },
+    { name: "Mallikarjuna", location: "Andhra Pradesh", img: `${import.meta.env.BASE_URL}images/Mallikarjuna_Swamy.png`, details: "Sacred shrine of Shiva & Parvati." },
+    { name: "Mahakaleshwar", location: "Ujjain", img: `${import.meta.env.BASE_URL}images/Mahakaleshwar_jyotirlinga.png`, details: "South-facing Jyotirlinga." },
+    { name: "Omkareshwar", location: "Madhya Pradesh", img: `${import.meta.env.BASE_URL}images/Omkareshwar_Temple.png`, details: "Located on Om-shaped island." },
+    { name: "Kedarnath", location: "Uttarakhand", img: `${import.meta.env.BASE_URL}images/Kedarnath_Temple.png`, details: "Himalayan holy temple." },
+    { name: "Bhimashankar", location: "Maharashtra", img: `${import.meta.env.BASE_URL}images/Bhimashankar_Temple.png`, details: "Origin of Bhima River." },
+    { name: "Kashi Vishwanath", location: "Varanasi", img: `${import.meta.env.BASE_URL}images/Kashi_Vishwanath_temple.png`, details: "Sacred temple of Varanasi." },
+    { name: "Trimbakeshwar", location: "Maharashtra", img: `${import.meta.env.BASE_URL}images/Trimbakeshwar_Temple.png`, details: "Origin of Godavari River." },
+    { name: "Vaidyanath", location: "Jharkhand", img: `${import.meta.env.BASE_URL}images/baidyanath_dham.png`, details: "Divine healer form." },
+    { name: "Nageshwar", location: "Gujarat", img: `${import.meta.env.BASE_URL}images/Nageshwar_Jyotirlinga.png`, details: "Symbol of protection." },
+    { name: "Ramanathaswamy", location: "Tamil Nadu", img: `${import.meta.env.BASE_URL}images/Ramanathaswamy_Temple.png`, details: "Established by Lord Rama." },
+    { name: "Grishneshwar", location: "Maharashtra", img: `${import.meta.env.BASE_URL}images/Grishneshwar_Temple.png`, details: "Last Jyotirlinga mentioned." },
   ];
 
   return (
@@ -198,25 +197,23 @@ export default function App() {
       </section>
 
       {/* VIDEO */}
-      {/* VIDEO SECTION */}
-<section className="py-20 px-6 bg-black">
-  <h2 className="text-4xl font-bold text-center text-purple-400 mb-12">
-    Sacred Maha Shivaratri Video
-  </h2>
+      <section className="py-20 px-6 bg-black">
+        <h2 className="text-4xl font-bold text-center text-purple-400 mb-12">
+          Sacred Maha Shivaratri Video
+        </h2>
 
-  <div className="mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-700 hover:shadow-purple-500/40 transition duration-500"
-       style={{ width: "800px", height: "450px" }}> {/* Fixed Size */}
-    <video
-      src="/video/शिवनवरात्रि महा शिवरात्रि महोत्सव 2026 पंचम दिवस 🚩___ujjain _mahakal _mahakaa(.mp4"
-      controls
-      autoPlay
-      loop
-      muted={false} // Will play with sound after first user click
-      className="w-full h-full object-cover"
-    />
-  </div>
-</section>
-
+        <div className="mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-700 hover:shadow-purple-500/40 transition duration-500"
+             style={{ width: "800px", height: "450px" }}>
+          <video
+            src={`${import.meta.env.BASE_URL}video/शिवनवरात्रि महा शिवरात्रि महोत्सव 2026 पंचम दिवस 🚩___ujjain _mahakal _mahakaa(.mp4`}
+            controls
+            autoPlay
+            loop
+            muted={false}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section>
 
       {/* JYOTIRLING CARDS */}
       <section className="py-24 px-6 bg-black/90">
