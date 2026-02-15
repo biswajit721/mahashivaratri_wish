@@ -20,7 +20,7 @@ export default function MahaShivaratriWebsite() {
           loop
           playsInline
           className="w-full h-full object-cover"
-          src="/video/Aerial view of Lingraj Temple.webm" // ✅ Make sure this path is correct
+          src="/video/Aerial view of Lingraj Temple.mp4" // ✅ Make sure this path is correct
         >
           Your browser does not support the video tag.
         </video>
